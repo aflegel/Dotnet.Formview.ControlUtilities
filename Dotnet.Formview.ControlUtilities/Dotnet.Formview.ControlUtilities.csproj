@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlCollectionExtensions.cs" />
+    <Compile Include="GridviewCollectionExtensions.cs" />
     <Compile Include="GridViewEventHandler.cs" />
     <Compile Include="ControlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

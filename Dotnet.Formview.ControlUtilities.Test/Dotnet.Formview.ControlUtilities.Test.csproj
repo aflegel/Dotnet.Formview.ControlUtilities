@@ -58,15 +58,16 @@
   <ItemGroup>
     <Compile Include="ControlExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="WebControlExtensionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dotnet.Formview.ControlUtilities\Dotnet.Formview.ControlUtilities.csproj">
       <Project>{5a09d51b-2623-4ecc-a611-a542f63050bf}</Project>
       <Name>Dotnet.Formview.ControlUtilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

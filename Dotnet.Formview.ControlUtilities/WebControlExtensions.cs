@@ -33,10 +33,15 @@ namespace Dotnet.Formview.ControlUtilities
 		/// <param name="classesToAdd"></param>
 		public static void AddCssClass<T>(this T control, List<string> classesToAdd) where T : Control
 		{
-			if (control is HtmlControl)
-				((HtmlControl)(object)control).Attributes["Class"] = ((HtmlControl)(object)control).Attributes["Class"].Union(classesToAdd);
-			else if (control is WebControl)
-				((WebControl)(object)control).CssClass = ((WebControl)(object)control).CssClass.Union(classesToAdd);
+			switch (control)
+			{
+				case HtmlControl htmlControl:
+					htmlControl.Attributes["Class"] = htmlControl.Attributes["Class"].Union(classesToAdd);
+					break;
+				case WebControl webControl:
+					webControl.CssClass = webControl.CssClass.Union(classesToAdd);
+					break;
+			}
 		}
 
 		/// <summary>
@@ -53,10 +58,15 @@ namespace Dotnet.Formview.ControlUtilities
 		/// <param name="classesToRemove"></param>
 		public static void RemoveCssClass<T>(this T control, List<string> classesToRemove) where T : Control
 		{
-			if (control is HtmlControl)
-				((HtmlControl)(object)control).Attributes["Class"] = ((HtmlControl)(object)control).Attributes["Class"].Except(classesToRemove);
-			else if (control is WebControl)
-				((WebControl)(object)control).CssClass = ((WebControl)(object)control).CssClass.Except(classesToRemove);
+			switch (control)
+			{
+				case HtmlControl htmlControl:
+					htmlControl.Attributes["Class"] = htmlControl.Attributes["Class"].Except(classesToRemove);
+					break;
+				case WebControl webControl:
+					webControl.CssClass = webControl.CssClass.Except(classesToRemove);
+					break;
+			}
 		}
 	}
 }

@@ -29,8 +29,8 @@ namespace Dotnet.Formview.ControlUtilities
 			//recursively finds all controls and child controls for any given control
 			foreach (var control in parent.Controls.Cast<Control>())
 			{
-				if (control is T)
-					yield return (T)control;
+				if (control is T t)
+					yield return t;
 
 				foreach (var descendant in control.GetAllControls<T>())
 				{

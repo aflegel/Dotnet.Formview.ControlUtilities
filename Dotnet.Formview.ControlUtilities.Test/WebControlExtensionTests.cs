@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -118,6 +118,22 @@ namespace Dotnet.Formview.ControlUtilities.Test
 			control.RemoveCssClass("class3");
 
 			control.CssClass.Should().Be("class1 class2");
+		}
+
+		[TestMethod]
+		public void WorksForHtmlControls()
+		{
+			var cell = new HtmlTableCell();
+
+			cell.AddCssClass("someclass");
+
+			cell.Attributes["Class"].Should().Be("someclass");
+
+			var generic = new HtmlGenericControl();
+
+			generic.AddCssClass("a-new-class");
+
+			generic.Attributes["Class"].Should().Be("a-new-class");
 		}
 	}
 }

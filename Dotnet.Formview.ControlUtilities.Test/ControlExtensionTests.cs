@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Web.UI;
+﻿using System.Web.UI;
 using System.Web.UI.WebControls;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Dotnet.Formview.ControlUtilities.Test
 {
@@ -39,7 +39,6 @@ namespace Dotnet.Formview.ControlUtilities.Test
 			}
 		}
 
-
 		[TestMethod]
 		public void GetAllControls()
 		{
@@ -60,7 +59,7 @@ namespace Dotnet.Formview.ControlUtilities.Test
 		}
 
 		[TestMethod]
-		public void TestMethod2()
+		public void GetAllControlsGenericGrandchildren()
 		{
 			var parent = ControlWithGrandChildren;
 
